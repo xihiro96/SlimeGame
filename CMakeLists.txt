@@ -15,7 +15,7 @@ set(SOURCE_FILES
 
 #copy file to where my executable is
 file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")
-
+file(COPY "AudioImages/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
