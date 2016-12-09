@@ -104,6 +104,24 @@ void Instructions::runInstructions(sf::RenderWindow &window) {
     sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(1280,720));
     // play music
     instr.playInstructionsMusic();
+    // define local variables
+    int a;
+    sf::RectangleShape fade;
+    fade.setSize(sf::Vector2f(1280, 720));
+    // fade in
+    a = 255;
+    fade.setFillColor(sf::Color(0,0,0,255));
+    window.draw(fade);
+    window.display();
+    while(a > 0) {
+        a -= 4;
+        window.clear();
+        window.draw(backgroundIm);
+        instr.draw(window);
+        window.draw(fade);
+        fade.setFillColor(sf::Color(0,0,0,a));
+        window.display();
+    }
     // loop to check for key presses
     while(window.isOpen()) {
         sf::Event event;
@@ -119,9 +137,7 @@ void Instructions::runInstructions(sf::RenderWindow &window) {
                             event.key.code == sf::Keyboard::Escape) {
                         instr.playSelectSound();
                         // screen fade and return
-                        sf::RectangleShape fade;
-                        fade.setSize(sf::Vector2f(1280, 720));
-                        int a = 0;
+                        a = 0;
                         while(a < 255) {
                             fade.setFillColor(sf::Color(0,0,0,a));
                             a++;
