@@ -7,15 +7,17 @@
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MainMenu.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MainMenu.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/StageLevel.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MainGame/Instructions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Slime.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/StageLevel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Game.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/AnimatedGameObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Slime.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/RegularGameObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MainGame/Instructions.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Game.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/RegularGameObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MainGame/RegularGameObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/modules/FindSFML.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />

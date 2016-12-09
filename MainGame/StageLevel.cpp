@@ -36,7 +36,7 @@ int StageLevel::runLevel(sf::RenderWindow &window) {
     // play music
     level.playLevelMusic();
     // set m_speed and slime
-    float m_speed = 120.0f;
+    float m_speed = 150.0f;
     Slime player;
     sf::Clock clock;
 

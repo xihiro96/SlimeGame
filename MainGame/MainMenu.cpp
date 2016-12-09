@@ -134,6 +134,16 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
                         // read which button was pressed and return value
                         case sf::Keyboard::Return:
                             menu.playSelectSound();
+                            // screen fade and return
+                            sf::RectangleShape fade;
+                            fade.setSize(sf::Vector2f(1280, 720));
+                            int a = 0;
+                            while(a < 255) {
+                                fade.setFillColor(sf::Color(0,0,0,a));
+                                a++;
+                                window.draw(fade);
+                                window.display();
+                            }
                             return menu.getPressedItem();
                     }
 

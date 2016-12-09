@@ -11,6 +11,8 @@ include_directories(${SFML_INCLUDE_DIR})
 
 set(SOURCE_FILES
         main.cpp
+        CutScenes/Background.cpp
+        CutScenes/Background.h
         MainGame/Game.cpp
         MainGame/Game.h
         MainGame/GameObject.cpp
@@ -23,9 +25,10 @@ set(SOURCE_FILES
         MainGame/MainMenu.h
         MainGame/StageLevel.cpp
         MainGame/StageLevel.h
-        CutScenes/Background.cpp
-        CutScenes/Background.h
-        MainGame/Slime.cpp MainGame/Slime.h)
+        MainGame/Slime.cpp
+        MainGame/Slime.h
+        MainGame/Instructions.cpp
+        MainGame/Instructions.h)
 
 #copy file to where my executable is
 file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")
@@ -42,5 +45,5 @@ file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/grassy_lands.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/slime_sprites.png" DESTINATION "${CMAKE_BINARY_DIR}")
 
-add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES} MainGame/Slime.cpp MainGame/Slime.h)
+add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES} MainGame/Slime.cpp MainGame/Slime.h MainGame/Instructions.cpp MainGame/Instructions.h)
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
