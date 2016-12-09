@@ -87,7 +87,6 @@ int main()
 
                 break;
             case instructions :
-                // TODO display instructions page
                 Instructions::runInstructions(window);
                 currentState = mainMenu;
                 break;

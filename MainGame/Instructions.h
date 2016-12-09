@@ -10,7 +10,7 @@
 #include "Game.h"
 #include "../CutScenes/Background.h"
 
-#define MAX_NUM_ITEMS 4
+#define MAX_NUM_ITEMS 16
 
 class Instructions {
 public :

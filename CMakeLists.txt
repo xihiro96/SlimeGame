@@ -32,18 +32,23 @@ set(SOURCE_FILES
 
 #copy file to where my executable is
 file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")
+# font files
 file(COPY "AudioImages/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
+# mainMenu and instructions music/sound effects/BG image
 file(COPY "AudioImages/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsSelect.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/quiet_slumber_instr.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+# level music and pics
+file(COPY "AudioImages/trap_queen_8bit_lv1.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/grassy_lands.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+# slime sound effects and images
 file(COPY "AudioImages/jump.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/attack.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/get_item.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/trap_queen_8bit_lv1.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/grassy_lands.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/slime_sprites.png" DESTINATION "${CMAKE_BINARY_DIR}")
 
-add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES} MainGame/Slime.cpp MainGame/Slime.h MainGame/Instructions.cpp MainGame/Instructions.h)
+add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
