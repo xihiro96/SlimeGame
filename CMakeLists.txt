@@ -22,7 +22,7 @@ set(SOURCE_FILES
         MainGame/MainMenu.cpp
         MainGame/MainMenu.h
         CutScenes/Background.cpp
-        CutScenes/Background.h)
+        CutScenes/Background.h MainGame/StageLevel.cpp MainGame/StageLevel.h)
 
 #copy file to where my executable is
 file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")

@@ -11,7 +11,7 @@ int main()
     enum gameState {mainMenu, playGame, instructions, gameOver, cutScene};
 
     // Forward declaration of functions
-    //static sf::RenderWindow getWindow();
+    // so far there's none :)
 
     // Initialize menu
     sf::RenderWindow window(sf::VideoMode(1280,720), "Menu", sf::Style::Titlebar | sf::Style::Close);
@@ -42,6 +42,9 @@ int main()
                         // exit game
                         loopFlag = false;
                         break;
+                    default :
+                        std::cout << "Error Error" << std::endl;
+                        loopFlag = false;
                 }
                 break;
             case playGame :
@@ -75,6 +78,7 @@ int main()
 
                 // remove this once game is implemented ******
                 currentState = mainMenu;
+                //loopFlag = false;
                 //********************************************
 
                 break;

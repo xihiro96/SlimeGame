@@ -6,7 +6,21 @@
 #include "../CutScenes/Background.h"
 
 MainMenu::MainMenu(float width, float height) {
+    // create the sounds once
+    // cursor movement sound
+    if (!bufferCursor.loadFromFile("Kingdom_Hearts_Sound_EffectsCursor_Move.wav")){
+        std::cout << "Error reading sound" << std::endl;
+    }
+    // cursor selection sound
+    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
+        std::cout << "Error reading sound" << std::endl;
+    }
+    // background music sound
+    if (!menuMusic.openFromFile("Silence-of-the-Forest.ogg")){
+        std::cout << "Error reading sound" << std::endl;
+    }
 
+    // set the game text
     if(!optionsFont.loadFromFile("bit.ttf")){
         //handle error
     }
@@ -50,6 +64,7 @@ void MainMenu::draw(sf::RenderWindow &window) {
     }
 }
 
+// change text visuals when moving up
 void MainMenu::moveUp() {
     if(selectedItemIndex - 1 >= 0) {
         menu[selectedItemIndex].setFillColor(sf::Color::White);
@@ -59,6 +74,8 @@ void MainMenu::moveUp() {
         menu[selectedItemIndex].setCharacterSize(40);
     }
 }
+
+// change text visuals when moving down
 void MainMenu::moveDown() {
     if(selectedItemIndex + 2 < MAX_NUM_ITEMS) {
         menu[selectedItemIndex].setFillColor(sf::Color::White);
@@ -70,25 +87,16 @@ void MainMenu::moveDown() {
 }
 
 void MainMenu::playCursorSound() {
-    if (!bufferCursor.loadFromFile("Kingdom_Hearts_Sound_EffectsCursor_Move.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
     soundCursor.setBuffer(bufferCursor);
     soundCursor.play();
 }
 
 void MainMenu::playSelectSound() {
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
     soundSelect.setBuffer(bufferSelect);
     soundSelect.play();
 }
 
 void MainMenu::playMenuMusic() {
-    if (!menuMusic.openFromFile("Silence-of-the-Forest.ogg")){
-        std::cout << "Error reading sound" << std::endl;
-    }
     menuMusic.play();
 }
 
