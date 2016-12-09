@@ -10,6 +10,7 @@ StageLevel::StageLevel(float width, float height) {
     if (!levelMusic.openFromFile("trap_queen_8bit_lv1.wav")){
         std::cout << "Error reading sound" << std::endl;
     }
+    levelMusic.setLoop(true);
     // add gameObjects to vector
 
 }

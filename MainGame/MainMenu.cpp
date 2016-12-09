@@ -19,6 +19,7 @@ MainMenu::MainMenu(float width, float height) {
     if (!menuMusic.openFromFile("Silence-of-the-Forest.ogg")){
         std::cout << "Error reading sound" << std::endl;
     }
+    menuMusic.setLoop(true);
 
     // set the game text
     if(!optionsFont.loadFromFile("bit.ttf")){
@@ -119,8 +120,7 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
                     break;
                 // read which key was released (up/down)
                 case sf::Event::KeyReleased:
-                    switch (event.key.code)
-                    {
+                    switch (event.key.code) {
                         // move up
                         case sf::Keyboard::Up:
                             menu.moveUp();
@@ -144,15 +144,14 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
                                 window.draw(fade);
                                 window.display();
                             }
-                            return menu.getPressedItem();
+                        return menu.getPressedItem();
                     }
-
+                }
             }
+            // clear and update the screen
+            window.clear();
+            window.draw(backgroundIm);
+            menu.draw(window);
+            window.display();
         }
-        // clear and update the screen
-        window.clear();
-        window.draw(backgroundIm);
-        menu.draw(window);
-        window.display();
     }
-}

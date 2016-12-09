@@ -3,6 +3,7 @@
  */
 
 #include "MainGame/MainMenu.h"
+#include "MainGame/Instructions.h"
 #include "MainGame/StageLevel.h"
 
 int main()
@@ -87,12 +88,8 @@ int main()
                 break;
             case instructions :
                 // TODO display instructions page
-                std::cout << "Instructions has been selected" << std::endl;
-
-                // remove this once game is implemented ******
+                Instructions::runInstructions(window);
                 currentState = mainMenu;
-                //********************************************
-
                 break;
             case gameOver :
                 // TODO display gameover screen

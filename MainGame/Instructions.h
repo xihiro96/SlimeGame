@@ -15,16 +15,19 @@
 class Instructions {
 public :
     // constructor and destructors
-    Instructions();
+    Instructions(float width, float height);
     ~Instructions();
     // functions
+    void draw(sf::RenderWindow &window);
     void playInstructionsMusic();
-    static int runInstructions(sf::RenderWindow &window);
+    void playSelectSound();
+    static void runInstructions(sf::RenderWindow &window);
 private :
-    int selectedItemIndex;
     sf::Font optionsFont;
     sf::Font titleFont;
     sf::Text instructions[MAX_NUM_ITEMS];
 
+    sf::SoundBuffer bufferSelect;
+    sf::Sound soundSelect;
     sf::Music instructionsMusic;
 };
