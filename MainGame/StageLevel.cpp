@@ -7,7 +7,7 @@
 StageLevel::StageLevel(float width, float height) {
     // create the sounds once
     // background music sound
-    if (!levelMusic.openFromFile("Silence-of-the-Forest.ogg")){
+    if (!levelMusic.openFromFile("trap_queen_8bit_lv1.wav")){
         std::cout << "Error reading sound" << std::endl;
     }
     // add gameObjects to vector

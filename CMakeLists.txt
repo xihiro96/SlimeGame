@@ -37,6 +37,7 @@ file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" DESTINATION 
 file(COPY "AudioImages/jump.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/attack.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/get_item.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/trap_queen_8bit_lv1.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/grassy_lands.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/slime_sprites.png" DESTINATION "${CMAKE_BINARY_DIR}")
