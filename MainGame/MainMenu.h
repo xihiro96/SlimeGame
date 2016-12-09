@@ -20,7 +20,7 @@ public:
     void playCursorSound();
     void playSelectSound();
     void playMenuMusic();
-    static void runMenu();
+    static int runMenu(sf::RenderWindow &window);
 
 private:
     int selectedItemIndex;
