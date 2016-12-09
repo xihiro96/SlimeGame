@@ -21,17 +21,25 @@ set(SOURCE_FILES
         MainGame/AnimatedGameObject.h
         MainGame/MainMenu.cpp
         MainGame/MainMenu.h
+        MainGame/StageLevel.cpp
+        MainGame/StageLevel.h
         CutScenes/Background.cpp
-        CutScenes/Background.h MainGame/StageLevel.cpp MainGame/StageLevel.h)
+        CutScenes/Background.h
+        MainGame/Slime.cpp MainGame/Slime.h)
 
 #copy file to where my executable is
 file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsSelect.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/jump.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/attack.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/get_item.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/grassy_lands.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/slime_sprites.png" DESTINATION "${CMAKE_BINARY_DIR}")
 
-add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
+add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES} MainGame/Slime.cpp MainGame/Slime.h)
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})

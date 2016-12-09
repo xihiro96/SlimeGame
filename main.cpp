@@ -3,6 +3,7 @@
  */
 
 #include "MainGame/MainMenu.h"
+#include "MainGame/StageLevel.h"
 
 int main()
 {
@@ -53,6 +54,7 @@ int main()
                 switch(level) {
                     case 1 :
                         // play level 1
+                        StageLevel::runLevel(window);
                         level++;
                         break;
                     case 2 :
@@ -69,6 +71,7 @@ int main()
                         break;
                     case 5 :
                         // play boss level
+                        level++;
                         break;
                     default :
                         std::cout << "Error Error" << std::endl;

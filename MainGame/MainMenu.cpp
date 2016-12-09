@@ -3,7 +3,7 @@
 //
 
 #include "MainMenu.h"
-#include "../CutScenes/Background.h"
+
 
 MainMenu::MainMenu(float width, float height) {
     // create the sounds once
