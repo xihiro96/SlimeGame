@@ -70,7 +70,7 @@ Instructions::Instructions(float width, float height) {
     instructions[11].setString("become a human. But beware,");
     instructions[12].setString("danger lurks all around you.");
     instructions[13].setString("Will you be able to achieve");
-    instructions[14].setString("dreams? or die trying?");
+    instructions[14].setString("your dreams? or die trying?");
 
     // RETURN SECTION
     instructions[15].setString("Press Enter to Return");
