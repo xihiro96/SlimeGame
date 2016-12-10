@@ -6,8 +6,10 @@
 #include "SFML/Graphics.hpp"
 #include <SFML/Audio.hpp>
 #include <iostream>
-#include "Game.h"
+#include "../CutScenes/Background.h"
+
 #define MAX_NUM_ITEMS 4
+
 class MainMenu {
 public:
     MainMenu(float width, float height);
@@ -20,11 +22,10 @@ public:
     void playCursorSound();
     void playSelectSound();
     void playMenuMusic();
-    static void runMenu();
+    static int runMenu(sf::RenderWindow &window);
 
 private:
     int selectedItemIndex;
-
     sf::Font optionsFont;
     sf::Font titleFont;
     sf::Text menu[MAX_NUM_ITEMS];
