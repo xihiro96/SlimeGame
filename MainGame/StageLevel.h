@@ -7,7 +7,6 @@
 #include "SFML/Graphics.hpp"
 #include <SFML/Audio.hpp>
 #include <iostream>
-#include "Game.h"
 #include "../CutScenes/Background.h"
 #include "Slime.h"
 #include "RegularGameObject.h"
@@ -15,7 +14,7 @@
 class StageLevel {
 public :
     // Constructor/Destructor
-    StageLevel(float width, float height);
+    StageLevel();
     ~StageLevel();
     // run the level function
     static int runLevel(sf::RenderWindow &window);
@@ -29,4 +28,6 @@ private :
     std::vector<GameObject*> gameObjects;
     // sound variables
     sf::Music levelMusic;
+    // set background
+    sf::RectangleShape backgroundIm;
 };

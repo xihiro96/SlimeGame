@@ -6,7 +6,6 @@
 #include "SFML/Graphics.hpp"
 #include <SFML/Audio.hpp>
 #include <iostream>
-#include "Game.h"
 #include "../CutScenes/Background.h"
 
 #define MAX_NUM_ITEMS 4

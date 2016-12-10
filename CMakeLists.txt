@@ -13,8 +13,6 @@ set(SOURCE_FILES
         main.cpp
         CutScenes/Background.cpp
         CutScenes/Background.h
-        MainGame/Game.cpp
-        MainGame/Game.h
         MainGame/GameObject.cpp
         MainGame/GameObject.h
         MainGame/RegularGameObject.cpp
@@ -28,18 +26,19 @@ set(SOURCE_FILES
         MainGame/Slime.cpp
         MainGame/Slime.h
         MainGame/Instructions.cpp
-        MainGame/Instructions.h)
+        MainGame/Instructions.h MainGame/GameOver.cpp MainGame/GameOver.h)
 
 #copy file to where my executable is
 file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")
 # font files
 file(COPY "AudioImages/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
-# mainMenu and instructions music/sound effects/BG image
+# mainMenu, instructions, game over - music/sound effects/BG image
 file(COPY "AudioImages/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsSelect.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/quiet_slumber_instr.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/game_over.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 # level music and pics
 file(COPY "AudioImages/trap_queen_8bit_lv1.wav" DESTINATION "${CMAKE_BINARY_DIR}")

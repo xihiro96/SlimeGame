@@ -5,6 +5,7 @@
 #include "MainGame/MainMenu.h"
 #include "MainGame/Instructions.h"
 #include "MainGame/StageLevel.h"
+#include "MainGame/GameOver.h"
 
 int main()
 {
@@ -34,7 +35,8 @@ int main()
                 switch(menuSelect) {
                     case 0:
                         // play game
-                        currentState = playGame;
+                        currentState = gameOver;
+                        //currentState = playGame;
                         break;
                     case 1:
                         // show instructions
@@ -78,8 +80,6 @@ int main()
                         std::cout << "Error Error" << std::endl;
                         loopFlag = false;
                 }
-                std::cout << "Play button has been pressed" << std::endl;
-
                 // remove this once game is implemented ******
                 currentState = mainMenu;
                 //loopFlag = false;
@@ -91,13 +91,11 @@ int main()
                 currentState = mainMenu;
                 break;
             case gameOver :
-                // TODO display gameover screen
-                // if user presses any key, go back to main screen and reset any game variables
-
-                // remove this once game is implemented ******
+                GameOver::runGameOver(window);
+                // if user presses enter, go back to main screen and reset any game variables
+                sceneNum = 1;
+                level = 1;
                 currentState = mainMenu;
-                //********************************************
-
                 break;
             case cutScene :
                 // TODO play cutScenes based on cutScene number :)
@@ -108,15 +106,20 @@ int main()
                         sceneNum++;
                         break;
                     case 2 :
+                        // play cutscene 2
                         sceneNum++;
                         break;
                     case 3 :
+                        // play cutscene 3
                         sceneNum++;
                         break;
                     case 4 :
+                        //play custscene 4
                         sceneNum++;
                         break;
                     case 5 :
+                        //play custscene 5
+                        sceneNum++;
                         break;
                     default :
                         std::cout << "Error Error" << std::endl;

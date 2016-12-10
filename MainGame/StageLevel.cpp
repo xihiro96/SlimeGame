@@ -4,7 +4,7 @@
 
 #include "StageLevel.h"
 
-StageLevel::StageLevel(float width, float height) {
+StageLevel::StageLevel() {
     // create the sounds once
     // background music sound
     if (!levelMusic.openFromFile("trap_queen_8bit_lv1.wav")){
@@ -31,9 +31,9 @@ void StageLevel::playLevelMusic() {
 
 int StageLevel::runLevel(sf::RenderWindow &window) {
     // set main menu screen and background
-    StageLevel level(window.getSize().x, window.getSize().y);
+    StageLevel level;
     Background back;
-    sf::RectangleShape backgroundIm = back.createBackground("grassy_lands.jpg", sf::Vector2f(1280,720));
+    sf::RectangleShape backgroundIm = back.createBackground("grassy_lands.jpg", sf::Vector2f(window.getSize().x, window.getSize().y));
     // play music
     level.playLevelMusic();
     // set m_speed and slime
