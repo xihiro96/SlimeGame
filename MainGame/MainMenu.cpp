@@ -60,72 +60,49 @@ void MainMenu::moveDown() {
 }
 
 int MainMenu::runMenu(sf::RenderWindow &window) {
+    // get screen size
+    int screenX = window.getSize().x;
+    int screenY = window.getSize().y;
     // set main menu screen
-    MainMenu menu(window.getSize().x, window.getSize().y);
+    MainMenu menu(screenX, screenY);
     // set background
     Background back;
-    sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(1280,720));
+    sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(screenX, screenY));
     // play music
     menu.playMenuMusic();
-    // FADE IN
-    // define local variables
-    int a;
-    sf::RectangleShape fade;
-    fade.setSize(sf::Vector2f(1280, 720));
     // fade in
-    a = 255;
-    fade.setFillColor(sf::Color(0,0,0,255));
-    window.draw(fade);
-    window.display();
-    while(a > 0) {
-        a--;
-        window.clear();
-        window.draw(backgroundIm);
-        menu.draw(window);
-        window.draw(fade);
-        fade.setFillColor(sf::Color(0,0,0,a));
-        window.display();
-    }
+    menu.fadeIn(window, menu, backgroundIm);
     // read key presses
     while(window.isOpen()) {
         sf::Event event;
-        while(window.pollEvent(event)){
+        while(window.pollEvent(event)) {
             switch(event.type) {
                 case sf::Event::Closed:
                     window.close();
                     break;
                 // read which key was released (up/down)
-                case sf::Event::KeyReleased:
+                case sf::Event::KeyReleased :
                     switch (event.key.code) {
                         // move up
-                        case sf::Keyboard::Up:
+                        case sf::Keyboard::Up :
                             menu.moveUp();
                             menu.playCursorSound();
                             break;
                         // move down
-                        case sf::Keyboard::Down:
+                        case sf::Keyboard::Down :
                             menu.moveDown();
                             menu.playCursorSound();
                             break;
                         // read which button was pressed and return value
-                        case sf::Keyboard::Return:
-                            menu.playSelectSound();
+                        case sf::Keyboard::Return :
                             // screen fade and return
-                            a = 0;
-                            while(a < 255) {
-                                fade.setFillColor(sf::Color(0,0,0,a));
-                                a++;
-                                window.draw(fade);
-                                window.display();
-                            }
-                        return menu.getPressedItem();
+                            menu.playSelectSound();
+                            menu.fadeOut(window);
+                            return menu.getPressedItem();
                     }
                 }
             }
-            // clear and update the screen
-            window.clear();
-            window.draw(backgroundIm);
-            menu.draw(window);
-            window.display();
+        // clear and update the screen
+        menu.render(window, menu, backgroundIm);
         }
     }

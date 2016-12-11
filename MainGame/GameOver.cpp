@@ -28,28 +28,18 @@ void GameOver::draw(sf::RenderWindow &window) {
 }
 
 void GameOver::runMenu(sf::RenderWindow &window) {
+    // get screen size
+    int screenX = window.getSize().x;
+    int screenY = window.getSize().y;
     // create the gameOver screen
-    GameOver gameOver(window.getSize().x, window.getSize().y);
+    GameOver gameOver(screenX, screenY);
     // play gameover sound
     gameOver.playGameOverSound();
-    // FADE IN
-    // define local variables
-    int a;
-    sf::RectangleShape fade;
-    fade.setSize(sf::Vector2f(1280, 720));
+    // set background
+    sf::RectangleShape backgroundIm(sf::Vector2f(screenX, screenY));
+    backgroundIm.setFillColor(sf::Color::Black);
     // fade in
-    a = 255;
-    fade.setFillColor(sf::Color(0,0,0,255));
-    window.draw(fade);
-    window.display();
-    while(a > 0) {
-        a--;
-        window.clear();
-        gameOver.draw(window);
-        window.draw(fade);
-        fade.setFillColor(sf::Color(0,0,0,a));
-        window.display();
-    }
+    gameOver.fadeIn(window, gameOver, backgroundIm);
     // loop to check for key presses
     while(window.isOpen()) {
         sf::Event event;
@@ -61,22 +51,14 @@ void GameOver::runMenu(sf::RenderWindow &window) {
                 case sf::Event::KeyReleased :
                     // if return is pressed, return to main screen
                     if (event.key.code == sf::Keyboard::Return) {
-                        gameOver.playSelectSound();
                         // screen fade and return
-                        a = 0;
-                        while(a < 255) {
-                            fade.setFillColor(sf::Color(0,0,0,a));
-                            a++;
-                            window.draw(fade);
-                            window.display();
-                        }
+                        gameOver.playSelectSound();
+                        gameOver.fadeOut(window);
                         return;
                     }
             }
         }
         // clear and update the screen
-        window.clear();
-        gameOver.draw(window);
-        window.display();
+        gameOver.render(window, gameOver, backgroundIm);
     }
 }

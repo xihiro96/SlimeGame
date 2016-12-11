@@ -26,6 +26,12 @@ public :
     void playGameOverSound();
     void playMenuMusic();
     void playMenuMusic2();
+    // draw and render
+    virtual void draw(sf::RenderWindow &window) = 0;
+    void render(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm);
+    // fading in and out
+    void fadeIn(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm);
+    void fadeOut(sf::RenderWindow &window);
 protected :
     // include fonts
     sf::Font optionsFont;

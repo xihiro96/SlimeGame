@@ -42,6 +42,49 @@ MenuItems::~MenuItems() {
 
 }
 
+// render screen
+void MenuItems::render(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm) {
+    window.clear();
+    window.draw(backgroundIm);
+    menu.draw(window);
+    window.display();
+}
+
+// fade in and fade out functions
+void MenuItems::fadeIn(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm) {
+    sf::RectangleShape fade;
+    fade.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
+    // fade in
+    sf::Uint8 a = 255;
+    // prevents white flash from occuring
+    fade.setFillColor(sf::Color(0,0,0,255));
+    window.draw(fade);
+    window.display();
+    // fade in by changing transparency
+    while(a > 0) {
+        a--;
+        window.clear();
+        window.draw(backgroundIm);
+        menu.draw(window);
+        window.draw(fade);
+        fade.setFillColor(sf::Color(0,0,0,a));
+        window.display();
+    }
+}
+void MenuItems::fadeOut(sf::RenderWindow &window) {
+    // create rectangle
+    sf::RectangleShape fade;
+    fade.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
+    // fade out
+    sf::Uint8 a = 0;
+    while(a < 255) {
+        fade.setFillColor(sf::Color(0,0,0,a));
+        a++;
+        window.draw(fade);
+        window.display();
+    }
+}
+
 // play sound functions
 void MenuItems::playCursorSound() {
     soundCursor.setBuffer(bufferCursor);
