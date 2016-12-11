@@ -24,7 +24,7 @@ int main()
     int menuSelect;
     bool loopFlag = true;
     int sceneNum = 1;
-    int level = 1;
+    int level = 2;
 
     // begin loop here
     while(loopFlag) {
@@ -35,7 +35,7 @@ int main()
                 switch(menuSelect) {
                     case 0:
                         // play game
-                        currentState = gameOver;
+                        currentState = playGame;
                         //currentState = playGame;
                         break;
                     case 1:
@@ -57,22 +57,26 @@ int main()
                 switch(level) {
                     case 1 :
                         // play level 1
-                        StageLevel::runLevel(window);
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 2 :
                         // play level 2
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 3 :
                         // play level 3
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 4 :
                         // play level 4
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 5 :
+                        StageLevel::runLevel(window, level);
                         // play boss level
                         level++;
                         break;

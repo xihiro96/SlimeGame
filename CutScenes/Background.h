@@ -13,8 +13,13 @@ public:
 
     sf::RectangleShape createBackground(std::string fileName, sf::Vector2f resolution);
 
+    void setBack(int backNum);//setter
+
+    const std::string& getBack(); //getter
+
 private:
     sf::Texture texture;
+    std::string currentBack;
 };
 
 

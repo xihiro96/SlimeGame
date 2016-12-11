@@ -29,16 +29,17 @@ void StageLevel::playLevelMusic() {
     levelMusic.play();
 }
 
-int StageLevel::runLevel(sf::RenderWindow &window) {
+int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
     // set main menu screen and background
     StageLevel level;
     Background back;
-    sf::RectangleShape backgroundIm = back.createBackground("grassy_lands.jpg", sf::Vector2f(window.getSize().x, window.getSize().y));
+    back.setBack(levelNum);
+    sf::RectangleShape backgroundIm = back.createBackground(back.getBack(), sf::Vector2f(window.getSize().x, window.getSize().y));
     // play music
     level.playLevelMusic();
     // set m_speed and slime
-    float m_speed = 150.0f;
-    Slime player;
+    float m_speed = 300.0f;
+    Slime player(levelNum);
     sf::Clock clock;
 
     // read key presses
