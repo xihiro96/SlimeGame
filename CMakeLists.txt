@@ -30,7 +30,8 @@ set(SOURCE_FILES
         MainGame/GameOver.cpp
         MainGame/GameOver.h
         MainGame/MenuItems.cpp
-        MainGame/MenuItems.h)
+        MainGame/MenuItems.h
+        MainGame/CutsceneQueue.h)
 
 #copy file to where my executable is
 # font files
