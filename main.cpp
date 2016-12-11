@@ -35,8 +35,8 @@ int main()
                 switch(menuSelect) {
                     case 0:
                         // play game
-                        currentState = gameOver;
-                        //currentState = playGame;
+                        //currentState = gameOver;
+                        currentState = playGame;
                         break;
                     case 1:
                         // show instructions

@@ -27,12 +27,12 @@ Instructions::Instructions(float width, float height) {
     float sp;
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
         instructions[i].setFont(optionsFont);
-        instructions[i].setFillColor(sf::Color::White);
+        instructions[i].setColor(sf::Color::White);
         instructions[i].setCharacterSize(25);
     }
     // CONTROLS SECTION
     instructions[0].setFont(titleFont);
-    instructions[0].setFillColor(sf::Color::Green);
+    instructions[0].setColor(sf::Color::Green);
     instructions[0].setString("Controls");
     instructions[0].setCharacterSize(50);
     instructions[0].setStyle(sf::Text::Bold);
@@ -51,7 +51,7 @@ Instructions::Instructions(float width, float height) {
 
     // STORY SECTION
     instructions[6].setFont(titleFont);
-    instructions[6].setFillColor(sf::Color::Green);
+    instructions[6].setColor(sf::Color::Green);
     instructions[6].setString("Story");
     instructions[6].setCharacterSize(50);
     instructions[6].setStyle(sf::Text::Bold);

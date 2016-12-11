@@ -29,23 +29,23 @@ MainMenu::MainMenu(float width, float height) {
         //handle error
     }
     menu[0].setFont(optionsFont);
-    menu[0].setFillColor(sf::Color::Green);
+    menu[0].setColor(sf::Color::Green);
     menu[0].setString("Begin Game");
     menu[0].setPosition(width/1.3f, height/(MAX_NUM_ITEMS + 1) * 1.5f);
     menu[0].setCharacterSize(40);
 
     menu[1].setFont(optionsFont);
-    menu[1].setFillColor(sf::Color::White);
+    menu[1].setColor(sf::Color::White);
     menu[1].setString("Instructions");
     menu[1].setPosition(width/1.3f, height/(MAX_NUM_ITEMS + 1) * 2.5f);
 
     menu[2].setFont(optionsFont);
-    menu[2].setFillColor(sf::Color::White);
+    menu[2].setColor(sf::Color::White);
     menu[2].setString("Exit");
     menu[2].setPosition(width/1.3f, height/(MAX_NUM_ITEMS + 1) * 3.5f);
 
     menu[3].setFont(titleFont);
-    menu[3].setFillColor(sf::Color::Green);
+    menu[3].setColor(sf::Color::Green);
     menu[3].setString("Slime Adventures");
     menu[3].setCharacterSize(75);
     menu[3].setStyle(sf::Text::Bold);
@@ -68,10 +68,10 @@ void MainMenu::draw(sf::RenderWindow &window) {
 // change text visuals when moving up
 void MainMenu::moveUp() {
     if(selectedItemIndex - 1 >= 0) {
-        menu[selectedItemIndex].setFillColor(sf::Color::White);
+        menu[selectedItemIndex].setColor(sf::Color::White);
         menu[selectedItemIndex].setCharacterSize(30);
         selectedItemIndex--;
-        menu[selectedItemIndex].setFillColor(sf::Color::Green);
+        menu[selectedItemIndex].setColor(sf::Color::Green);
         menu[selectedItemIndex].setCharacterSize(40);
     }
 }
@@ -79,10 +79,10 @@ void MainMenu::moveUp() {
 // change text visuals when moving down
 void MainMenu::moveDown() {
     if(selectedItemIndex + 2 < MAX_NUM_ITEMS) {
-        menu[selectedItemIndex].setFillColor(sf::Color::White);
+        menu[selectedItemIndex].setColor(sf::Color::White);
         menu[selectedItemIndex].setCharacterSize(30);
         selectedItemIndex++;
-        menu[selectedItemIndex].setFillColor(sf::Color::Green);
+        menu[selectedItemIndex].setColor(sf::Color::Green);
         menu[selectedItemIndex].setCharacterSize(40);
     }
 }
@@ -140,12 +140,12 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
                 case sf::Event::KeyReleased:
                     switch (event.key.code) {
                         // move up
-                        case sf::Keyboard::Up:
+                        case sf::Keyboard::W:
                             menu.moveUp();
                             menu.playCursorSound();
                             break;
                         // move down
-                        case sf::Keyboard::Down:
+                        case sf::Keyboard::S:
                             menu.moveDown();
                             menu.playCursorSound();
                             break;

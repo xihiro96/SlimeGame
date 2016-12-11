@@ -2,6 +2,7 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/AnimatedGameObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MainMenu.cpp" isTestSource="false" />
@@ -18,25 +19,24 @@
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Instructions.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/RegularGameObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/FindSFML.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CutScenes/Background.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CutScenes/Background.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/FindSFML.cmake" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/6/include" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>
