@@ -13,12 +13,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e249591-f77f-4785-b8e2-5669a53f1313" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MainGame/MenuItems.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MainGame/MenuItems.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/Kingdom_Hearts_Sound_EffectsSelect.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/Perfect DOS VGA 437.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/Plains_back.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/Silence-of-the-Forest.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/attack.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/bit.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/caveSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/cave_back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/fireSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/forest.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/forestSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/forest_back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/forest_back2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/game_over.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/get_item.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/grassy_lands.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/heathens_8bit_lv3.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/jump.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/ocean_back.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/panda_8bit_lv2.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/plainSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/quiet_slumber_instr.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/radioactive_8bit_lv4.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/sao_8bit_lv5.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/slime_sprites.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/trap_queen_8bit_lv1.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/volcano_back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AudioImages/waterSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Cyclops.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Cyclops_Battle_Cry.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Earth Projectile (for cyclops).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Gargoyle Down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Gargoyle attack 1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Gargoyle up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Water Projectile (for revanent).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/Wind Attack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/caveSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/fireSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/forestSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/plainSlime.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slimesAndEnemies/waterSlime.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Homework5.iml" afterPath="$PROJECT_DIR$/.idea/Homework5.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CutScenes/Background.cpp" afterPath="$PROJECT_DIR$/CutScenes/Background.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CutScenes/Background.h" afterPath="$PROJECT_DIR$/CutScenes/Background.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGame/MainMenu.cpp" afterPath="$PROJECT_DIR$/MainGame/MainMenu.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGame/Slime.cpp" afterPath="$PROJECT_DIR$/MainGame/Slime.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGame/Slime.h" afterPath="$PROJECT_DIR$/MainGame/Slime.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGame/StageLevel.cpp" afterPath="$PROJECT_DIR$/MainGame/StageLevel.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainGame/StageLevel.h" afterPath="$PROJECT_DIR$/MainGame/StageLevel.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
@@ -45,8 +89,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            <state relative-caret-position="396">
+              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -55,30 +99,28 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-              <folding>
-                <element signature="e#44#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Background.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CutScenes/Background.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+            <state relative-caret-position="450">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Background.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CutScenes/Background.h">
+      <file leaf-file-name="MainMenu.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainGame/MainMenu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state relative-caret-position="864">
+              <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuItems.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainGame/MenuItems.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,8 +129,8 @@
       <file leaf-file-name="StageLevel.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainGame/StageLevel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="234">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -97,8 +139,18 @@
       <file leaf-file-name="Slime.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainGame/Slime.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="513">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuItems.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainGame/MenuItems.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -107,8 +159,8 @@
       <file leaf-file-name="StageLevel.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainGame/StageLevel.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="378">
+              <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -141,17 +193,19 @@
         <option value="$PROJECT_DIR$/MainGame/Instructions.cpp" />
         <option value="$PROJECT_DIR$/MainGame/MainMenu.h" />
         <option value="$PROJECT_DIR$/MainGame/Instructions.h" />
-        <option value="$PROJECT_DIR$/MainGame/MainMenu.cpp" />
         <option value="$PROJECT_DIR$/MainGame/GameOver.h" />
         <option value="$PROJECT_DIR$/MainGame/GameOver.cpp" />
-        <option value="$PROJECT_DIR$/MainGame/StageLevel.h" />
         <option value="$PROJECT_DIR$/MainGame/Slime.h" />
         <option value="$PROJECT_DIR$/CutScenes/Background.h" />
+        <option value="$PROJECT_DIR$/MainGame/StageLevel.h" />
+        <option value="$PROJECT_DIR$/CutScenes/Background.cpp" />
+        <option value="$PROJECT_DIR$/MainGame/MainMenu.cpp" />
+        <option value="$PROJECT_DIR$/MainGame/MenuItems.cpp" />
+        <option value="$PROJECT_DIR$/MainGame/MenuItems.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/MainGame/StageLevel.cpp" />
         <option value="$PROJECT_DIR$/MainGame/Slime.cpp" />
-        <option value="$PROJECT_DIR$/CutScenes/Background.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -162,9 +216,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="77" />
     <option name="y" value="52" />
-    <option name="width" value="1117" />
+    <option name="width" value="1274" />
     <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -500,13 +554,13 @@
     <option name="totallyTimeSpent" value="54657000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="52" width="1117" height="1028" extended-state="4" />
+    <frame x="77" y="52" width="1274" height="1028" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25872874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2244898" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42931938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32768363" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32670158" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25235602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -541,14 +595,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MainGame/GameObject.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGame/Game.h" />
     <entry file="file://$PROJECT_DIR$/modules/FindSFML.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -716,21 +762,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGame/MainMenu.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGame/GameOver.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#54#82#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,52 +800,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGame/StageLevel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGame/StageLevel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGame/Slime.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CutScenes/Background.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="234">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="e#41#64#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGame/MenuItems.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGame/MainMenu.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="123" column="23" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="e#44#74#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="450">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGame/MenuItems.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGame/StageLevel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGame/StageLevel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGame/Slime.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        <state relative-caret-position="396">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding />
         </state>
       </provider>

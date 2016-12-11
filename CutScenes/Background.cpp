@@ -4,16 +4,14 @@
 
 #include "Background.h"
 #include <iostream>
-#include <SFML/Graphics/RectangleShape.hpp>
 
 Background::Background() {
 
 }
 
+// sets background for levels
 void Background::setBack(int backNum){
     switch(backNum){
-        case 0: currentBack = "forest.jpg";
-            break;
         case 1: currentBack = "Plains_back.jpg";
             break;
         case 2: currentBack = "forest_back.png";

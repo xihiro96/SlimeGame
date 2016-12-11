@@ -15,7 +15,7 @@ Slime::Slime(int levelNum) {
             break;
         case 2: slimeType = "forestSlime.png";
             break;
-        case 3: slimeType = "oceanSlime.png";
+        case 3: slimeType = "waterSlime.png";
             break;
         case 4: slimeType = "caveSlime.png";
             break;

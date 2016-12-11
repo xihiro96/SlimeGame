@@ -26,38 +26,43 @@ set(SOURCE_FILES
         MainGame/Slime.cpp
         MainGame/Slime.h
         MainGame/Instructions.cpp
-        MainGame/Instructions.h MainGame/GameOver.cpp MainGame/GameOver.h)
+        MainGame/Instructions.h
+        MainGame/GameOver.cpp
+        MainGame/GameOver.h
+        MainGame/MenuItems.cpp
+        MainGame/MenuItems.h)
 
 #copy file to where my executable is
-file(COPY "content/Mario.png" DESTINATION "${CMAKE_BINARY_DIR}")
 # font files
-file(COPY "AudioImages/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
-# mainMenu, instructions, game over - music/sound effects/BG image
-file(COPY "AudioImages/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsSelect.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/quiet_slumber_instr.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/game_over.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/forest_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/Plains_back.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/ocean_back.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/volcano_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/cave_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Fonts/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Fonts/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
+# MenuItems music and pics
+file(COPY "AudioImages/MenuItems/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/MenuItems/Kingdom_Hearts_Sound_EffectsSelect.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/MenuItems/Kingdom_Hearts_Sound_EffectsCursor_Move.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/MenuItems/quiet_slumber_instr.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/MenuItems/game_over.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/MenuItems/forest.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 # level music and pics
-file(COPY "AudioImages/trap_queen_8bit_lv1.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/grassy_lands.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/trap_queen_8bit_lv1.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/panda_8bit_lv2.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/radioactive_8bit_lv3.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/heathens_8bit_lv4.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/sao_8bit_lv5.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/forest_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/Plains_back.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/ocean_back.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/volcano_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameLevels/cave_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
 # slime sound effects and images
-file(COPY "AudioImages/jump.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/attack.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/get_item.wav" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/slime_sprites.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/caveSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/fireSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/forestSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/plainSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "AudioImages/waterSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/jump.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/attack.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/get_item.wav" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/caveSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/fireSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/forestSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/plainSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Slime/waterSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})

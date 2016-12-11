@@ -4,15 +4,40 @@
 
 #include "StageLevel.h"
 
-StageLevel::StageLevel() {
-    // create the sounds once
-    // background music sound
-    if (!levelMusic.openFromFile("trap_queen_8bit_lv1.wav")){
-        std::cout << "Error reading sound" << std::endl;
+StageLevel::StageLevel(int levelNum) {
+    // set background music depending on level
+    switch(levelNum) {
+        case 1 :
+            if (!levelMusic.openFromFile("trap_queen_8bit_lv1.wav")){
+                std::cout << "Error reading sound" << std::endl;
+            }
+            break;
+        case 2 :
+            if (!levelMusic.openFromFile("panda_8bit_lv2.wav")){
+                std::cout << "Error reading sound" << std::endl;
+            }
+            break;
+        case 3 :
+            if (!levelMusic.openFromFile("radioactive_8bit_lv3.wav")){
+                std::cout << "Error reading sound" << std::endl;
+            }
+            break;
+        case 4 :
+            if (!levelMusic.openFromFile("heathens_8bit_lv4.wav")){
+                std::cout << "Error reading sound" << std::endl;
+            }
+            break;
+        case 5 :
+            if (!levelMusic.openFromFile("sao_8bit_lv5.wav")){
+                std::cout << "Error reading sound" << std::endl;
+            }
+            break;
+        default :
+            if (!levelMusic.openFromFile("trap_queen_8bit_lv1.wav")){
+                std::cout << "Error reading sound" << std::endl;
+            }
     }
     levelMusic.setLoop(true);
-    // add gameObjects to vector
-
 }
 
 StageLevel::~StageLevel() {
@@ -31,7 +56,7 @@ void StageLevel::playLevelMusic() {
 
 int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
     // set main menu screen and background
-    StageLevel level;
+    StageLevel level(levelNum);
     Background back;
     back.setBack(levelNum);
     sf::RectangleShape backgroundIm = back.createBackground(back.getBack(), sf::Vector2f(window.getSize().x, window.getSize().y));
@@ -81,7 +106,6 @@ int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
                     }
             }
         }
-        //player.update(32, 32*10);
         // clear and update the screen
         window.clear();
         window.draw(backgroundIm);

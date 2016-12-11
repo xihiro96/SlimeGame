@@ -24,7 +24,7 @@ int main()
     int menuSelect;
     bool loopFlag = true;
     int sceneNum = 1;
-    int level = 2;
+    int level = 3;
 
     // begin loop here
     while(loopFlag) {
@@ -36,7 +36,6 @@ int main()
                     case 0:
                         // play game
                         currentState = playGame;
-                        //currentState = playGame;
                         break;
                     case 1:
                         // show instructions

@@ -120,7 +120,7 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
     window.draw(fade);
     window.display();
     while(a > 0) {
-        a -= 4;
+        a -= 2;
         window.clear();
         window.draw(backgroundIm);
         menu.draw(window);
