@@ -4,29 +4,16 @@
 
 #pragma once
 
-#include "SFML/Graphics.hpp"
-#include <SFML/Audio.hpp>
-#include <iostream>
-#include "../CutScenes/Background.h"
+#include "MenuItems.h"
 
-#define MAX_NUM_ITEMS 16
-
-class Instructions {
+class Instructions : public MenuItems{
 public :
     // constructor and destructors
     Instructions(float width, float height);
-    ~Instructions();
     // functions
     void draw(sf::RenderWindow &window);
-    void playInstructionsMusic();
-    void playSelectSound();
-    static void runInstructions(sf::RenderWindow &window);
+    static void runMenu(sf::RenderWindow &window);
 private :
-    sf::Font optionsFont;
-    sf::Font titleFont;
+    static const int MAX_NUM_ITEMS = 16;
     sf::Text instructions[MAX_NUM_ITEMS];
-
-    sf::SoundBuffer bufferSelect;
-    sf::Sound soundSelect;
-    sf::Music instructionsMusic;
 };

@@ -5,22 +5,6 @@
 #include "GameOver.h"
 
 GameOver::GameOver(float width, float height) {
-    // load in the music
-    // gameOver sound
-    if (!gameOverBuffer.loadFromFile("game_over.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // cursor selection sound
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // set the game text
-    if(!optionsFont.loadFromFile("bit.ttf")){
-        //handle error
-    }
-    if(!titleFont.loadFromFile("Perfect DOS VGA 437.ttf")){
-        //handle error
-    }
     // set the game over text
     gameOverText[0].setFont(titleFont);
     gameOverText[0].setFillColor(sf::Color::Red);
@@ -37,27 +21,13 @@ GameOver::GameOver(float width, float height) {
     gameOverText[1].setPosition(width/2.5f, height/(MAX_NUM_ITEMS +1) * 1.3f);
 }
 
-GameOver::~GameOver() {
-
-}
-
-void GameOver::playGameOverSound() {
-    soundGameOver.setBuffer(gameOverBuffer);
-    soundGameOver.play();
-}
-
-void GameOver::playSelectSound() {
-    soundSelect.setBuffer(bufferSelect);
-    soundSelect.play();
-}
-
 void GameOver::draw(sf::RenderWindow &window) {
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
         window.draw(gameOverText[i]);
     }
 }
 
-void GameOver::runGameOver(sf::RenderWindow &window) {
+void GameOver::runMenu(sf::RenderWindow &window) {
     // create the gameOver screen
     GameOver gameOver(window.getSize().x, window.getSize().y);
     // play gameover sound
@@ -73,7 +43,7 @@ void GameOver::runGameOver(sf::RenderWindow &window) {
     window.draw(fade);
     window.display();
     while(a > 0) {
-        a -= 4;
+        a--;
         window.clear();
         gameOver.draw(window);
         window.draw(fade);

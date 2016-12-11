@@ -5,24 +5,7 @@
 #include "Instructions.h"
 
 Instructions::Instructions(float width, float height) {
-    // set music
-    // background music sound
-    if (!instructionsMusic.openFromFile("quiet_slumber_instr.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    instructionsMusic.setLoop(true);
-    // cursor selection sound
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-
     // CREATE TEXT HERE
-    if(!optionsFont.loadFromFile("bit.ttf")){
-        //handle error
-    }
-    if(!titleFont.loadFromFile("Perfect DOS VGA 437.ttf")){
-        //handle error
-    }
     // Loop through text: set font, size, color
     float sp;
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
@@ -77,33 +60,20 @@ Instructions::Instructions(float width, float height) {
     instructions[15].setPosition(width/2.6f, height/(MAX_NUM_ITEMS + 1) * 14.0f);
 }
 
-Instructions::~Instructions() {
-
-}
-
 void Instructions::draw(sf::RenderWindow &window) {
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
         window.draw(instructions[i]);
     }
 }
 
-void Instructions::playSelectSound() {
-    soundSelect.setBuffer(bufferSelect);
-    soundSelect.play();
-}
-
-void Instructions::playInstructionsMusic() {
-    instructionsMusic.play();
-}
-
-void Instructions::runInstructions(sf::RenderWindow &window) {
+void Instructions::runMenu(sf::RenderWindow &window) {
     // create instance
     Instructions instr(window.getSize().x, window.getSize().y);
     // set background
     Background back;
     sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(1280,720));
     // play music
-    instr.playInstructionsMusic();
+    instr.playMenuMusic2();
     // define local variables
     int a;
     sf::RectangleShape fade;
@@ -114,7 +84,7 @@ void Instructions::runInstructions(sf::RenderWindow &window) {
     window.draw(fade);
     window.display();
     while(a > 0) {
-        a -= 4;
+        a--;
         window.clear();
         window.draw(backgroundIm);
         instr.draw(window);

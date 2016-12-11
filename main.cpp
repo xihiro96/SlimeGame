@@ -35,7 +35,7 @@ int main()
                 switch(menuSelect) {
                     case 0:
                         // play game
-                        currentState = playGame;
+                        currentState = gameOver;
                         break;
                     case 1:
                         // show instructions
@@ -90,11 +90,11 @@ int main()
 
                 break;
             case instructions :
-                Instructions::runInstructions(window);
+                Instructions::runMenu(window);
                 currentState = mainMenu;
                 break;
             case gameOver :
-                GameOver::runGameOver(window);
+                GameOver::runMenu(window);
                 // if user presses enter, go back to main screen and reset any game variables
                 sceneNum = 1;
                 level = 1;

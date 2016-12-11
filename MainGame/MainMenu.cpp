@@ -4,30 +4,7 @@
 
 #include "MainMenu.h"
 
-
-MainMenu::MainMenu(float width, float height) {
-    // create the sounds once
-    // cursor movement sound
-    if (!bufferCursor.loadFromFile("Kingdom_Hearts_Sound_EffectsCursor_Move.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // cursor selection sound
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // background music sound
-    if (!menuMusic.openFromFile("Silence-of-the-Forest.ogg")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    menuMusic.setLoop(true);
-
-    // set the game text
-    if(!optionsFont.loadFromFile("bit.ttf")){
-        //handle error
-    }
-    if(!titleFont.loadFromFile("Perfect DOS VGA 437.ttf")){
-        //handle error
-    }
+MainMenu::MainMenu(float width, float height) : MenuItems() {
     menu[0].setFont(optionsFont);
     menu[0].setFillColor(sf::Color::Green);
     menu[0].setString("Begin Game");
@@ -52,11 +29,6 @@ MainMenu::MainMenu(float width, float height) {
     menu[3].setPosition(width/10, height/(MAX_NUM_ITEMS +1) * .3f);
 
     selectedItemIndex = 0;
-
-}
-
-MainMenu::~MainMenu() {
-
 }
 
 void MainMenu::draw(sf::RenderWindow &window) {
@@ -87,20 +59,6 @@ void MainMenu::moveDown() {
     }
 }
 
-void MainMenu::playCursorSound() {
-    soundCursor.setBuffer(bufferCursor);
-    soundCursor.play();
-}
-
-void MainMenu::playSelectSound() {
-    soundSelect.setBuffer(bufferSelect);
-    soundSelect.play();
-}
-
-void MainMenu::playMenuMusic() {
-    menuMusic.play();
-}
-
 int MainMenu::runMenu(sf::RenderWindow &window) {
     // set main menu screen
     MainMenu menu(window.getSize().x, window.getSize().y);
@@ -120,7 +78,7 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
     window.draw(fade);
     window.display();
     while(a > 0) {
-        a -= 2;
+        a--;
         window.clear();
         window.draw(backgroundIm);
         menu.draw(window);
