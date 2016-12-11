@@ -14,10 +14,10 @@
 class StageLevel {
 public :
     // Constructor/Destructor
-    StageLevel();
+    StageLevel(int levelNum);
     ~StageLevel();
     // run the level function
-    static int runLevel(sf::RenderWindow &window);
+    static int runLevel(sf::RenderWindow &window, int levelNum);
     // draw
     void draw(sf::RenderWindow &window);
     // level music

@@ -5,22 +5,6 @@
 #include "GameOver.h"
 
 GameOver::GameOver(float width, float height) {
-    // load in the music
-    // gameOver sound
-    if (!gameOverBuffer.loadFromFile("game_over.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // cursor selection sound
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // set the game text
-    if(!optionsFont.loadFromFile("bit.ttf")){
-        //handle error
-    }
-    if(!titleFont.loadFromFile("Perfect DOS VGA 437.ttf")){
-        //handle error
-    }
     // set the game over text
     gameOverText[0].setFont(titleFont);
     gameOverText[0].setColor(sf::Color::Red);
@@ -37,49 +21,25 @@ GameOver::GameOver(float width, float height) {
     gameOverText[1].setPosition(width/2.5f, height/(MAX_NUM_ITEMS +1) * 1.3f);
 }
 
-GameOver::~GameOver() {
-
-}
-
-void GameOver::playGameOverSound() {
-    soundGameOver.setBuffer(gameOverBuffer);
-    soundGameOver.play();
-}
-
-void GameOver::playSelectSound() {
-    soundSelect.setBuffer(bufferSelect);
-    soundSelect.play();
-}
-
 void GameOver::draw(sf::RenderWindow &window) {
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
         window.draw(gameOverText[i]);
     }
 }
 
-void GameOver::runGameOver(sf::RenderWindow &window) {
+void GameOver::runMenu(sf::RenderWindow &window) {
+    // get screen size
+    int screenX = window.getSize().x;
+    int screenY = window.getSize().y;
     // create the gameOver screen
-    GameOver gameOver(window.getSize().x, window.getSize().y);
+    GameOver gameOver(screenX, screenY);
     // play gameover sound
     gameOver.playGameOverSound();
-    // FADE IN
-    // define local variables
-    int a;
-    sf::RectangleShape fade;
-    fade.setSize(sf::Vector2f(1280, 720));
+    // set background
+    sf::RectangleShape backgroundIm(sf::Vector2f(screenX, screenY));
+    backgroundIm.setFillColor(sf::Color::Black);
     // fade in
-    a = 255;
-    fade.setFillColor(sf::Color(0,0,0,255));
-    window.draw(fade);
-    window.display();
-    while(a > 0) {
-        a -= 4;
-        window.clear();
-        gameOver.draw(window);
-        window.draw(fade);
-        fade.setFillColor(sf::Color(0,0,0,a));
-        window.display();
-    }
+    gameOver.fadeIn(window, gameOver, backgroundIm);
     // loop to check for key presses
     while(window.isOpen()) {
         sf::Event event;
@@ -91,22 +51,14 @@ void GameOver::runGameOver(sf::RenderWindow &window) {
                 case sf::Event::KeyReleased :
                     // if return is pressed, return to main screen
                     if (event.key.code == sf::Keyboard::Return) {
-                        gameOver.playSelectSound();
                         // screen fade and return
-                        a = 0;
-                        while(a < 255) {
-                            fade.setFillColor(sf::Color(0,0,0,a));
-                            a++;
-                            window.draw(fade);
-                            window.display();
-                        }
+                        gameOver.playSelectSound();
+                        gameOver.fadeOut(window);
                         return;
                     }
             }
         }
         // clear and update the screen
-        window.clear();
-        gameOver.draw(window);
-        window.display();
+        gameOver.render(window, gameOver, backgroundIm);
     }
 }

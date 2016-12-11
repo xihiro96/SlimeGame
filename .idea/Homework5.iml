@@ -8,9 +8,11 @@
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MainMenu.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MainMenu.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameOver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MainGame/MenuItems.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/StageLevel.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Instructions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Slime.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MainGame/MenuItems.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/StageLevel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameOver.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/RegularGameObject.cpp" isTestSource="false" />

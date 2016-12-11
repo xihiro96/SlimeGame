@@ -24,7 +24,8 @@ int main()
     int menuSelect;
     bool loopFlag = true;
     int sceneNum = 1;
-    int level = 1;
+    int level = 3;
+    int highScore = NULL;
 
     // begin loop here
     while(loopFlag) {
@@ -35,7 +36,10 @@ int main()
                 switch(menuSelect) {
                     case 0:
                         // play game
+<<<<<<< HEAD
                         //currentState = gameOver;
+=======
+>>>>>>> 1678d390e76ab14ecd7e62408a02f9ba133d38d2
                         currentState = playGame;
                         break;
                     case 1:
@@ -57,22 +61,26 @@ int main()
                 switch(level) {
                     case 1 :
                         // play level 1
-                        StageLevel::runLevel(window);
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 2 :
                         // play level 2
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 3 :
                         // play level 3
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 4 :
                         // play level 4
+                        StageLevel::runLevel(window, level);
                         level++;
                         break;
                     case 5 :
+                        StageLevel::runLevel(window, level);
                         // play boss level
                         level++;
                         break;
@@ -87,11 +95,11 @@ int main()
 
                 break;
             case instructions :
-                Instructions::runInstructions(window);
+                Instructions::runMenu(window);
                 currentState = mainMenu;
                 break;
             case gameOver :
-                GameOver::runGameOver(window);
+                GameOver::runMenu(window);
                 // if user presses enter, go back to main screen and reset any game variables
                 sceneNum = 1;
                 level = 1;

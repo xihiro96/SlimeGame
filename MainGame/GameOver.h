@@ -4,31 +4,17 @@
 
 #pragma once
 
-#include "SFML/Graphics.hpp"
-#include <SFML/Audio.hpp>
-#include <iostream>
+#include "MenuItems.h"
 
-#define MAX_NUM_ITEMS 2
-
-class GameOver {
+class GameOver : public MenuItems{
 public :
     // constructor/destructor
     GameOver(float width, float height);
-    ~GameOver();
-    // music/sounds
-    void playSelectSound();
-    void playGameOverSound();
     // display gameOver screen
     void draw(sf::RenderWindow &window);
-    static void runGameOver(sf::RenderWindow &window);
+    static void runMenu(sf::RenderWindow &window);
 private :
-    // game over sound
-    sf::SoundBuffer gameOverBuffer;
-    sf::SoundBuffer bufferSelect;
-    sf::Sound soundGameOver;
-    sf::Sound soundSelect;
-    // display text
-    sf::Font titleFont;
-    sf::Font optionsFont;
+    // text
+    static const int MAX_NUM_ITEMS = 2;
     sf::Text gameOverText[MAX_NUM_ITEMS];
 };

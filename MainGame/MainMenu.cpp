@@ -4,30 +4,7 @@
 
 #include "MainMenu.h"
 
-
-MainMenu::MainMenu(float width, float height) {
-    // create the sounds once
-    // cursor movement sound
-    if (!bufferCursor.loadFromFile("Kingdom_Hearts_Sound_EffectsCursor_Move.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // cursor selection sound
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    // background music sound
-    if (!menuMusic.openFromFile("Silence-of-the-Forest.ogg")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    menuMusic.setLoop(true);
-
-    // set the game text
-    if(!optionsFont.loadFromFile("bit.ttf")){
-        //handle error
-    }
-    if(!titleFont.loadFromFile("Perfect DOS VGA 437.ttf")){
-        //handle error
-    }
+MainMenu::MainMenu(float width, float height) : MenuItems() {
     menu[0].setFont(optionsFont);
     menu[0].setColor(sf::Color::Green);
     menu[0].setString("Begin Game");
@@ -52,11 +29,6 @@ MainMenu::MainMenu(float width, float height) {
     menu[3].setPosition(width/10, height/(MAX_NUM_ITEMS +1) * .3f);
 
     selectedItemIndex = 0;
-
-}
-
-MainMenu::~MainMenu() {
-
 }
 
 void MainMenu::draw(sf::RenderWindow &window) {
@@ -87,87 +59,58 @@ void MainMenu::moveDown() {
     }
 }
 
-void MainMenu::playCursorSound() {
-    soundCursor.setBuffer(bufferCursor);
-    soundCursor.play();
-}
-
-void MainMenu::playSelectSound() {
-    soundSelect.setBuffer(bufferSelect);
-    soundSelect.play();
-}
-
-void MainMenu::playMenuMusic() {
-    menuMusic.play();
-}
-
 int MainMenu::runMenu(sf::RenderWindow &window) {
+    // get screen size
+    int screenX = window.getSize().x;
+    int screenY = window.getSize().y;
     // set main menu screen
-    MainMenu menu(window.getSize().x, window.getSize().y);
+    MainMenu menu(screenX, screenY);
     // set background
     Background back;
-    sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(1280,720));
+    sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(screenX, screenY));
     // play music
     menu.playMenuMusic();
-    // FADE IN
-    // define local variables
-    int a;
-    sf::RectangleShape fade;
-    fade.setSize(sf::Vector2f(1280, 720));
     // fade in
-    a = 255;
-    fade.setFillColor(sf::Color(0,0,0,255));
-    window.draw(fade);
-    window.display();
-    while(a > 0) {
-        a -= 4;
-        window.clear();
-        window.draw(backgroundIm);
-        menu.draw(window);
-        window.draw(fade);
-        fade.setFillColor(sf::Color(0,0,0,a));
-        window.display();
-    }
+    menu.fadeIn(window, menu, backgroundIm);
     // read key presses
     while(window.isOpen()) {
         sf::Event event;
-        while(window.pollEvent(event)){
+        while(window.pollEvent(event)) {
             switch(event.type) {
                 case sf::Event::Closed:
                     window.close();
                     break;
                 // read which key was released (up/down)
-                case sf::Event::KeyReleased:
+                case sf::Event::KeyReleased :
                     switch (event.key.code) {
                         // move up
+<<<<<<< HEAD
                         case sf::Keyboard::W:
+=======
+                        case sf::Keyboard::Up :
+>>>>>>> 1678d390e76ab14ecd7e62408a02f9ba133d38d2
                             menu.moveUp();
                             menu.playCursorSound();
                             break;
                         // move down
+<<<<<<< HEAD
                         case sf::Keyboard::S:
+=======
+                        case sf::Keyboard::Down :
+>>>>>>> 1678d390e76ab14ecd7e62408a02f9ba133d38d2
                             menu.moveDown();
                             menu.playCursorSound();
                             break;
                         // read which button was pressed and return value
-                        case sf::Keyboard::Return:
-                            menu.playSelectSound();
+                        case sf::Keyboard::Return :
                             // screen fade and return
-                            a = 0;
-                            while(a < 255) {
-                                fade.setFillColor(sf::Color(0,0,0,a));
-                                a++;
-                                window.draw(fade);
-                                window.display();
-                            }
-                        return menu.getPressedItem();
+                            menu.playSelectSound();
+                            menu.fadeOut(window);
+                            return menu.getPressedItem();
                     }
                 }
             }
-            // clear and update the screen
-            window.clear();
-            window.draw(backgroundIm);
-            menu.draw(window);
-            window.display();
+        // clear and update the screen
+        menu.render(window, menu, backgroundIm);
         }
     }

@@ -5,24 +5,7 @@
 #include "Instructions.h"
 
 Instructions::Instructions(float width, float height) {
-    // set music
-    // background music sound
-    if (!instructionsMusic.openFromFile("quiet_slumber_instr.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-    instructionsMusic.setLoop(true);
-    // cursor selection sound
-    if (!bufferSelect.loadFromFile("Kingdom_Hearts_Sound_EffectsSelect.wav")){
-        std::cout << "Error reading sound" << std::endl;
-    }
-
     // CREATE TEXT HERE
-    if(!optionsFont.loadFromFile("bit.ttf")){
-        //handle error
-    }
-    if(!titleFont.loadFromFile("Perfect DOS VGA 437.ttf")){
-        //handle error
-    }
     // Loop through text: set font, size, color
     float sp;
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
@@ -77,51 +60,25 @@ Instructions::Instructions(float width, float height) {
     instructions[15].setPosition(width/2.6f, height/(MAX_NUM_ITEMS + 1) * 14.0f);
 }
 
-Instructions::~Instructions() {
-
-}
-
 void Instructions::draw(sf::RenderWindow &window) {
     for (int i = 0; i < MAX_NUM_ITEMS; i++) {
         window.draw(instructions[i]);
     }
 }
 
-void Instructions::playSelectSound() {
-    soundSelect.setBuffer(bufferSelect);
-    soundSelect.play();
-}
-
-void Instructions::playInstructionsMusic() {
-    instructionsMusic.play();
-}
-
-void Instructions::runInstructions(sf::RenderWindow &window) {
+void Instructions::runMenu(sf::RenderWindow &window) {
+    // get screen size
+    int screenX = window.getSize().x;
+    int screenY = window.getSize().y;
     // create instance
-    Instructions instr(window.getSize().x, window.getSize().y);
+    Instructions instr(screenX, screenY);
     // set background
     Background back;
-    sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(1280,720));
+    sf::RectangleShape backgroundIm = back.createBackground("forest.jpg", sf::Vector2f(screenX, screenY));
     // play music
-    instr.playInstructionsMusic();
-    // define local variables
-    int a;
-    sf::RectangleShape fade;
-    fade.setSize(sf::Vector2f(1280, 720));
+    instr.playMenuMusic2();
     // fade in
-    a = 255;
-    fade.setFillColor(sf::Color(0,0,0,255));
-    window.draw(fade);
-    window.display();
-    while(a > 0) {
-        a -= 4;
-        window.clear();
-        window.draw(backgroundIm);
-        instr.draw(window);
-        window.draw(fade);
-        fade.setFillColor(sf::Color(0,0,0,a));
-        window.display();
-    }
+    instr.fadeIn(window, instr, backgroundIm);
     // loop to check for key presses
     while(window.isOpen()) {
         sf::Event event;
@@ -132,26 +89,15 @@ void Instructions::runInstructions(sf::RenderWindow &window) {
                     break;
                 case sf::Event::KeyReleased :
                     // if return is pressed, return to main screen
-                    if (event.key.code == sf::Keyboard::Return ||
-                            event.key.code == sf::Keyboard::BackSpace ||
-                            event.key.code == sf::Keyboard::Escape) {
+                    if (event.key.code == sf::Keyboard::Return) {
+                        // play sound, fade, leave screen
                         instr.playSelectSound();
-                        // screen fade and return
-                        a = 0;
-                        while(a < 255) {
-                            fade.setFillColor(sf::Color(0,0,0,a));
-                            a++;
-                            window.draw(fade);
-                            window.display();
-                        }
+                        instr.fadeOut(window);
                         return;
                     }
                 }
             }
         // clear and update the screen
-        window.clear();
-        window.draw(backgroundIm);
-        instr.draw(window);
-        window.display();
+        instr.render(window, instr, backgroundIm);
         }
     }
