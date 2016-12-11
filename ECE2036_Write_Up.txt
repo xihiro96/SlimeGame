@@ -1,0 +1,29 @@
+Slime Adventures
+
+Developers:
+Randy Deng
+Marites Hendrix
+Neha Tibrewal
+Jeffery Zhao
+
+ECE 2036: Engineering Software Design
+Section B
+December 15, 2016
+
+Sections the team wants credit for:
+- Make an amazing 2D game
+- Use templates AND class hierarchy/inheritance
+- etc
+
+What each member of the team accomplished:
+Randy Deng:
+- created finite state machine game controller
+- created game over screen
+- created instructions page
+- organized code structure
+Marites Hendrix:
+- created main menu screen
+Neha Tibrewal:
+-
+Jeffery Zhao:
+- compiled/created all necessary sprites
