@@ -22,6 +22,9 @@ public :
     void draw(sf::RenderWindow &window);
     // level music
     void playLevelMusic();
+    // boundary checking
+    void smartMove(Slime &player, sf::RenderWindow &window, sf::Vector2f &movement, float m_speed, sf::Time deltaT, bool direction);
+    void checkCollisions();
 
 private :
     // create the game objects

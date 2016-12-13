@@ -31,7 +31,7 @@ int main()
     // initialize config file values
     Config gameData;
     GameConfig::loadConfig(gameData);
-    GameConfig::gameReset(gameData);
+    //GameConfig::gameReset(gameData);
     // TODO fix issues with writeConfig.... it has to do with the working directory
     //GameConfig::writeConfig(gameData);
 
