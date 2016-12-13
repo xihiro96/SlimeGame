@@ -36,10 +36,10 @@ int main()
                 switch(menuSelect) {
                     case 0:
                         // play game
-<<<<<<< HEAD
+
                         //currentState = gameOver;
-=======
->>>>>>> 1678d390e76ab14ecd7e62408a02f9ba133d38d2
+
+
                         currentState = playGame;
                         break;
                     case 1:

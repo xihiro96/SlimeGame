@@ -84,20 +84,20 @@ int MainMenu::runMenu(sf::RenderWindow &window) {
                 case sf::Event::KeyReleased :
                     switch (event.key.code) {
                         // move up
-<<<<<<< HEAD
+
                         case sf::Keyboard::W:
-=======
+
                         case sf::Keyboard::Up :
->>>>>>> 1678d390e76ab14ecd7e62408a02f9ba133d38d2
+
                             menu.moveUp();
                             menu.playCursorSound();
                             break;
                         // move down
-<<<<<<< HEAD
+
                         case sf::Keyboard::S:
-=======
+
                         case sf::Keyboard::Down :
->>>>>>> 1678d390e76ab14ecd7e62408a02f9ba133d38d2
+
                             menu.moveDown();
                             menu.playCursorSound();
                             break;
