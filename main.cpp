@@ -7,6 +7,7 @@
 #include "MainGame/StageLevel.h"
 #include "MainGame/GameOver.h"
 #include "MainGame/GameConfig.h"
+#include "MainGame/StopWatch.h"
 
 int main()
 {
@@ -24,6 +25,9 @@ int main()
     gameState currentState = mainMenu;
     int menuSelect;
     bool loopFlag = true;
+    // create stopwatch and score
+    static StopWatch<> sw;
+    double score = 0;
     // initialize config file values
     Config gameData;
     GameConfig::loadConfig(gameData);
@@ -61,26 +65,36 @@ int main()
                 switch(gameData.level) {
                     case 1 :
                         // play level 1
+                        sw.start();
                         StageLevel::runLevel(window, gameData.level);
+                        score += sw.stop();
                         gameData.level++;
                         break;
                     case 2 :
                         // play level 2
+                        sw.start();
                         StageLevel::runLevel(window, gameData.level);
+                        score += sw.stop();
                         gameData.level++;
                         break;
                     case 3 :
                         // play level 3
+                        sw.start();
                         StageLevel::runLevel(window, gameData.level);
+                        score += sw.stop();
                         gameData.level++;
                         break;
                     case 4 :
                         // play level 4
+                        sw.start();
                         StageLevel::runLevel(window, gameData.level);
+                        score += sw.stop();
                         gameData.level++;
                         break;
                     case 5 :
+                        sw.start();
                         StageLevel::runLevel(window, gameData.level);
+                        score += sw.stop();
                         // play boss level
                         gameData.level++;
                         break;

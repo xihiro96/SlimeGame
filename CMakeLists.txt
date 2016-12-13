@@ -33,7 +33,7 @@ set(SOURCE_FILES
         MainGame/MenuItems.h
         MainGame/GameConfig.cpp
         MainGame/GameConfig.h
-        MainGame/CutsceneQueue.h)
+        MainGame/CutsceneQueue.h MainGame/StopWatch.h)
 
 #copy file to where my executable is
 # font files
