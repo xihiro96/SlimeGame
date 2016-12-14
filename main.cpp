@@ -6,9 +6,11 @@
 #include "MainGame/Instructions.h"
 #include "MainGame/StageLevel.h"
 #include "MainGame/GameOver.h"
+#include "CutScenes/Scene1.h"
 
 int main()
 {
+
     // State Machine Controller
     // States: Main Menu, Game Levels, Instructions, Game Over, CutScenes
     enum gameState {mainMenu, playGame, instructions, gameOver, cutScene};
@@ -18,9 +20,9 @@ int main()
 
     // Initialize menu
     sf::RenderWindow window(sf::VideoMode(1280,720), "Menu", sf::Style::Titlebar | sf::Style::Close);
-
+    Scene1::runScene1(window);
     // Initialize variables
-    gameState currentState = mainMenu;
+    /*gameState currentState = mainMenu;
     int menuSelect;
     bool loopFlag = true;
     int sceneNum = 1;
@@ -143,6 +145,6 @@ int main()
                 std::cout << "Error Error" << std::endl;
                 loopFlag = false;
         }
-    }
+    }*/
     return 0;
 }

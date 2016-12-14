@@ -31,7 +31,7 @@ set(SOURCE_FILES
         MainGame/GameOver.h
         MainGame/MenuItems.cpp
         MainGame/MenuItems.h
-        MainGame/CutsceneQueue.h)
+        CutScenes/CutsceneQueue.h CutScenes/Scene1.cpp CutScenes/Scene1.h)
 
 #copy file to where my executable is
 # font files
@@ -64,6 +64,9 @@ file(COPY "AudioImages/GameSprites/Slime/fireSlime.png" DESTINATION "${CMAKE_BIN
 file(COPY "AudioImages/GameSprites/Slime/forestSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/plainSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/waterSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
+#cut scenes
+file(COPY "AudioImages/Cutscenes/Hooded_Figure.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/forestCave.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
