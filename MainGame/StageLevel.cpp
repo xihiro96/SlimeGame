@@ -44,6 +44,34 @@ StageLevel::~StageLevel() {
 
 }
 
+void StageLevel::smartMove(Slime &player, sf::RenderWindow &window, sf::Vector2f &movement, float m_speed, sf::Time deltaT, bool direction) {
+    sf::Vector2f temp = player.getPosition();
+    // check for window collision
+
+    while(player.getPosition().x > window.getSize().x - 90 || player.getPosition().x < - 40) {
+        while(player.getPosition().x > window.getSize().x - 90) {
+            movement.x -= m_speed;
+            player.move(movement * deltaT.asSeconds());
+        }
+        while(player.getPosition().x < -40) {
+            movement.x += m_speed;
+            player.move(movement * deltaT.asSeconds());
+        }
+    }
+    // move normally
+    if (direction) {
+        movement.x += m_speed;
+        player.move(movement * deltaT.asSeconds());
+    } else {
+        movement.x -= m_speed;
+        player.move(movement * deltaT.asSeconds());
+    }
+}
+
+void StageLevel::checkCollisions() {
+
+}
+
 void StageLevel::draw(sf::RenderWindow &window) {
     //for (int i = 0; i < gameObjects.size(); i++) {
     //    gameObjects[i] -> draw(window);
@@ -80,29 +108,17 @@ int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
                 // read which key was released (up/down)
                 case sf::Event::KeyPressed :
                     sf::Vector2f movement(0.0f, 0.0f);
-                    switch (event.key.code)
-                    {
-                        // slime jump
-                        case sf::Keyboard::W :
-                            player.playJumpSound();
-                            break;
-                        // slime move left
-                        case sf::Keyboard::A :
-                            movement.x -= m_speed;
-                            player.move(movement * deltaT.asSeconds());
-                            break;
-                        // slime move right
-                        case sf::Keyboard::D :
-                            movement.x += m_speed;
-                            player.move(movement * deltaT.asSeconds());
-                            break;
-                        // slime attack
-                        case sf::Keyboard::Space :
-                            player.playAttackSound();
-                            break;
-                        // backspace to pause game
-                        case sf::Keyboard::Return:
-                            break;
+                    if (event.key.code == sf::Keyboard::W) {
+                        player.playJumpSound();
+                    }
+                    if (event.key.code == sf::Keyboard::A) {
+                        level.smartMove(player, window, movement, m_speed, deltaT, false);
+                    }
+                    if (event.key.code == sf::Keyboard::D) {
+                        level.smartMove(player, window, movement, m_speed, deltaT, true);
+                    }
+                    if (event.key.code == sf::Keyboard::Space) {
+                        player.playAttackSound();
                     }
             }
         }
