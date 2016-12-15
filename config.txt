@@ -1,5 +1,5 @@
 //Configuration and Data for Slime Adventures
 //Do not change values
-level = 4
+level = 2
 sceneNum = 1
 highScore = 99999

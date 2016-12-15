@@ -17,6 +17,7 @@ void GameConfig::loadConfig(Config &config) {
     std::string line;
     if (fin.good()) {
         while (getline(fin, line)) {
+            std::cout << line << std::endl;
             std::istringstream sin(line.substr(line.find("=") + 1));
             if (line.find("level") != -1)
                 sin >> config.level;
@@ -29,6 +30,8 @@ void GameConfig::loadConfig(Config &config) {
         std::cout << "Error reading config file" << std::endl;
     }
     fin.close();
+    fin.clear();
+    fin.seekg(0, std::ios::beg);
 }
 // write config
 void GameConfig::writeConfig(Config &config) {
