@@ -48,23 +48,23 @@ void StageLevel::smartMove(Slime &player, sf::RenderWindow &window, sf::Vector2f
     sf::Vector2f temp = player.getPosition();
     // check for window collision
 
-    while(player.getPosition().x > window.getSize().x - 90 || player.getPosition().x < - 40) {
+    while(player.getPosition().x > window.getSize().x - 90 || player.getPosition().x <= - 40) {
         while(player.getPosition().x > window.getSize().x - 90) {
-            movement.x -= m_speed;
-            player.move(movement * deltaT.asSeconds());
+            movement.x = -m_speed;
+            player.move(movement);
         }
-        while(player.getPosition().x < -40) {
-            movement.x += m_speed;
-            player.move(movement * deltaT.asSeconds());
+        while(player.getPosition().x <= -40) {
+            movement.x = m_speed;
+            player.move(movement);
         }
     }
     // move normally
     if (direction) {
-        movement.x += m_speed;
-        player.move(movement * deltaT.asSeconds());
+        movement.x = m_speed;
+        player.move(movement);
     } else {
-        movement.x -= m_speed;
-        player.move(movement * deltaT.asSeconds());
+        movement.x = -m_speed;
+        player.move(movement);
     }
 }
 
@@ -91,10 +91,11 @@ int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
     // play music
     level.playLevelMusic();
     // set m_speed and slime
-    float m_speed = 300.0f;
+    float m_speed = 15.0f, j_speed = 100.0f, gravity = 20.0f;
     Slime player(levelNum);
     sf::Clock clock;
-
+    bool isJumping = false;
+    bool direction = false;
     // read key presses
     while(window.isOpen()) {
         // set up events and clocks
@@ -105,22 +106,65 @@ int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
                 case sf::Event::Closed:
                     window.close();
                     break;
-                // read which key was released (up/down)
-                case sf::Event::KeyPressed :
-                    sf::Vector2f movement(0.0f, 0.0f);
-                    if (event.key.code == sf::Keyboard::W) {
-                        player.playJumpSound();
-                    }
-                    if (event.key.code == sf::Keyboard::A) {
-                        level.smartMove(player, window, movement, m_speed, deltaT, false);
-                    }
-                    if (event.key.code == sf::Keyboard::D) {
-                        level.smartMove(player, window, movement, m_speed, deltaT, true);
-                    }
-                    if (event.key.code == sf::Keyboard::Space) {
-                        player.playAttackSound();
-                    }
             }
+            sf::Vector2f movement(0.0f, 0.0f);
+            while(isJumping){
+                if(player.getPosition().y < 500.0f){
+                    //check if collided above
+                    movement.y += gravity;
+                    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+                        direction = false;
+                        movement.x = -m_speed;
+                        player.move(movement);
+                    }
+                    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
+                        direction = true;
+                        movement.x = m_speed;
+                        player.move(movement);
+                    }
+                    else{
+                        direction = NULL; //jumping in place
+                    }
+                }
+                else{
+                    player.setPosition(player.getPosition().x,500.0f); //set position equal to ground
+                    //needs more for object collision
+                    isJumping = false;
+                }
+                if(direction != NULL){
+                    level.smartMove(player, window, movement, m_speed, deltaT, direction);
+                }
+                else { //don't do smart move if jumping in place
+                    player.move(movement);
+                }
+            }
+            //if(sf::Event::KeyPressed){
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+                    level.smartMove(player, window, movement, m_speed, deltaT, false);
+                    //old movement
+//                    movement.x = -m_speed;
+//                    player.move(movement);
+                }
+                else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
+                    level.smartMove(player, window, movement, m_speed, deltaT, true);
+                    //old movement
+//                    movement.x = m_speed;
+//                    player.move(movement);
+                }
+                else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+                    player.playAttackSound();
+                }
+                else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+                    //pause
+                }
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+                    //continuously jumps in place if W is held down
+                    player.playJumpSound();
+                    isJumping = true;
+                    movement.y = -j_speed;
+                    player.move(movement);
+                }
+
         }
         // clear and update the screen
         window.clear();
