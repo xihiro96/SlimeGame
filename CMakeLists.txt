@@ -86,7 +86,7 @@ file(COPY "AudioImages/GameSprites/Slime/fireSlime.png" DESTINATION "${CMAKE_BIN
 file(COPY "AudioImages/GameSprites/Slime/forestSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/plainSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/waterSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-<<<<<<< HEAD
+
 
 #cut scenes
 file(COPY "AudioImages/Cutscenes/hoodFig2.png" DESTINATION "${CMAKE_BINARY_DIR}")
@@ -100,11 +100,9 @@ file(COPY "AudioImages/Cutscenes/oceanScenes.ogg" DESTINATION "${CMAKE_BINARY_DI
 file(COPY "AudioImages/Cutscenes/caveMusic.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Cutscenes/scene10Music.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Cutscenes/lastSceneMusic.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "config.txt" DESTINATION "${CMAKE_BINARY_DIR}")
-=======
 # level platforms
 file(COPY "config.ini" DESTINATION "${CMAKE_BINARY_DIR}")
->>>>>>> 7cbfd5226d95bdcb0d38841c8a090af54717d276
+
 
 
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
