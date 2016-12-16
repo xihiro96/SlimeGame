@@ -57,6 +57,21 @@ file(COPY "AudioImages/GameLevels/Plains_back.jpg" DESTINATION "${CMAKE_BINARY_D
 file(COPY "AudioImages/GameLevels/ocean_back.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameLevels/volcano_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameLevels/cave_back.png" DESTINATION "${CMAKE_BINARY_DIR}")
+# level platforms
+file(COPY "AudioImages/GameSprites/Platforms/longPlat1.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/shortPlat1.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/longPlat2.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/shortPlat2.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/longPlat3.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/shortPlat3.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/longPlat4.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Platforms/shortPlat4.png" DESTINATION "${CMAKE_BINARY_DIR}")
+# winning items
+file(COPY "AudioImages/GameSprites/Items/herb.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Items/skin.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Items/water.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Items/bones.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/GameSprites/Items/portal.png" DESTINATION "${CMAKE_BINARY_DIR}")
 # slime sound effects and images
 file(COPY "AudioImages/GameSprites/Slime/jump.wav" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/attack.wav" DESTINATION "${CMAKE_BINARY_DIR}")
@@ -66,7 +81,8 @@ file(COPY "AudioImages/GameSprites/Slime/fireSlime.png" DESTINATION "${CMAKE_BIN
 file(COPY "AudioImages/GameSprites/Slime/forestSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/plainSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/waterSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-file(COPY "config.txt" DESTINATION "${CMAKE_BINARY_DIR}")
+# level platforms
+file(COPY "config.ini" DESTINATION "${CMAKE_BINARY_DIR}")
 
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
