@@ -284,7 +284,7 @@ int StageLevel::runLevel(sf::RenderWindow &window, int levelNum) {
                 isJumping = false;
                 level.smartMove(player, window, movement, m_speed, true);
             }
-            
+
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
                 //continuously jumps in place if W is held down
                 isJumping = true;
