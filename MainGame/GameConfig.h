@@ -12,7 +12,7 @@
 struct Config {
     int level;
     int sceneNum;
-    int highScore;
+    double highScore;
 };
 
 class GameConfig {

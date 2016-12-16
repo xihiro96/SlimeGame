@@ -31,13 +31,15 @@ set(SOURCE_FILES
         MainGame/GameOver.h
         MainGame/MenuItems.cpp
         MainGame/MenuItems.h
-
-        CutScenes/CutsceneQueue.h CutScenes/Scene.cpp CutScenes/Scene.h
-
+        MainGame/EndGame.cpp
+        MainGame/EndGame.h
         MainGame/GameConfig.cpp
         MainGame/GameConfig.h
-        CutScenes/CutsceneQueue.h MainGame/StopWatch.h)
-
+        MainGame/StopWatch.h
+        CutScenes/CutsceneQueue.h
+        CutScenes/Scene.cpp
+        CutScenes/Scene.h
+        )
 
 #copy file to where my executable is
 # font files
