@@ -29,6 +29,7 @@ public :
     // draw and render
     virtual void draw(sf::RenderWindow &window) = 0;
     void render(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm);
+    void renderScene(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm, sf::RectangleShape &textBox);
     // fading in and out
     void fadeIn(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm);
     void fadeOut(sf::RenderWindow &window);

@@ -30,8 +30,8 @@ Randy Deng:
 - created config file reader
 - organized code structure
 Marites Hendrix:
-- created main menu screen
-- created classes for cutscenes
+- created main menu
+- created cutscenes package and contents
 Neha Tibrewal:
 - created jump function for slime
 Jeffery Zhao:

@@ -50,6 +50,14 @@ void MenuItems::render(sf::RenderWindow &window, MenuItems &menu, sf::RectangleS
     window.display();
 }
 
+void MenuItems::renderScene(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm, sf::RectangleShape &textBox) {
+    window.clear();
+    window.draw(backgroundIm);
+    window.draw(textBox);
+    menu.draw(window);
+    window.display();
+}
+
 // fade in and fade out functions
 void MenuItems::fadeIn(sf::RenderWindow &window, MenuItems &menu, sf::RectangleShape &backgroundIm) {
     sf::RectangleShape fade;

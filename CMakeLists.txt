@@ -31,18 +31,19 @@ set(SOURCE_FILES
         MainGame/GameOver.h
         MainGame/MenuItems.cpp
         MainGame/MenuItems.h
-<<<<<<< HEAD
-        CutScenes/CutsceneQueue.h CutScenes/Scene1.cpp CutScenes/Scene1.h)
-=======
+
+        CutScenes/CutsceneQueue.h CutScenes/Scene.cpp CutScenes/Scene.h
+
         MainGame/GameConfig.cpp
         MainGame/GameConfig.h
-        MainGame/CutsceneQueue.h MainGame/StopWatch.h)
->>>>>>> 8a062682418e4198da7d40b52c1e152dc9cdc1d4
+        CutScenes/CutsceneQueue.h MainGame/StopWatch.h)
+
 
 #copy file to where my executable is
 # font files
 file(COPY "AudioImages/Fonts/bit.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Fonts/Perfect DOS VGA 437.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Fonts/Ishmeria.ttf" DESTINATION "${CMAKE_BINARY_DIR}")
 # MenuItems music and pics
 file(COPY "AudioImages/MenuItems/Silence-of-the-Forest.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/MenuItems/Kingdom_Hearts_Sound_EffectsSelect.wav" DESTINATION "${CMAKE_BINARY_DIR}")
@@ -70,13 +71,21 @@ file(COPY "AudioImages/GameSprites/Slime/fireSlime.png" DESTINATION "${CMAKE_BIN
 file(COPY "AudioImages/GameSprites/Slime/forestSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/plainSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/GameSprites/Slime/waterSlime.png" DESTINATION "${CMAKE_BINARY_DIR}")
-<<<<<<< HEAD
+
 #cut scenes
-file(COPY "AudioImages/Cutscenes/Hooded_Figure.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/hoodFig2.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/slime_normal_right.png" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/slime_normal_left.png" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "AudioImages/Cutscenes/forestCave.jpg" DESTINATION "${CMAKE_BINARY_DIR}")
-=======
+file(COPY "AudioImages/Cutscenes/openScene.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/plainsMusic.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/scenes4_5.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/oceanScenes.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/caveMusic.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/scene10Music.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
+file(COPY "AudioImages/Cutscenes/lastSceneMusic.ogg" DESTINATION "${CMAKE_BINARY_DIR}")
 file(COPY "config.txt" DESTINATION "${CMAKE_BINARY_DIR}")
->>>>>>> 8a062682418e4198da7d40b52c1e152dc9cdc1d4
+
 
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES})
