@@ -2,17 +2,11 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-<<<<<<< HEAD
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/GameObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/GameConfig.cpp" isTestSource="false" />
-=======
       <sourceFolder url="file://$MODULE_DIR$/modules/FindSFML.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CutScenes/Background.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CutScenes/Background.cpp" isTestSource="false" />
->>>>>>> 7cbfd5226d95bdcb0d38841c8a090af54717d276
       <sourceFolder url="file://$MODULE_DIR$/MainGame/AnimatedGameObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/StopWatch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameConfig.h" isTestSource="false" />
@@ -25,31 +19,6 @@
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Slime.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameOver.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Instructions.cpp" isTestSource="false" />
-<<<<<<< HEAD
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/CutsceneQueue.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/GameObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/GameConfig.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/RegularGameObject.h" isTestSource="false" />
-<<<<<<< HEAD
-=======
-      <sourceFolder url="file://$MODULE_DIR$/MainGame/StopWatch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-<<<<<<< HEAD
->>>>>>> 8a062682418e4198da7d40b52c1e152dc9cdc1d4
-=======
-      <sourceFolder url="file://$MODULE_DIR$/modules/FindSFML.cmake" isTestSource="false" />
->>>>>>> 7cbfd5226d95bdcb0d38841c8a090af54717d276
-      <sourceFolder url="file://$MODULE_DIR$/CutScenes/Background.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CutScenes/CutsceneQueue.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CutScenes/Scene1.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CutScenes/Background.h" isTestSource="false" />
-<<<<<<< HEAD
-      <sourceFolder url="file://$MODULE_DIR$/CutScenes/Scene1.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/FindSFML.cmake" isTestSource="false" />
-=======
-=======
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MenuItems.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/Slime.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/MainMenu.cpp" isTestSource="false" />
@@ -60,17 +29,11 @@
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/StageLevel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MainGame/GameOver.cpp" isTestSource="false" />
->>>>>>> 5b15414230d6dfdf899c590a003de9ca79b6d71d
->>>>>>> 7cbfd5226d95bdcb0d38841c8a090af54717d276
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-<<<<<<< HEAD
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
-=======
           <root url="file:///System/Library/Frameworks/AudioToolbox.framework/Headers" />
           <root url="file:///System/Library/Frameworks/Carbon.framework/Headers" />
           <root url="file:///System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers" />
@@ -250,15 +213,10 @@
           <root url="file:///Library/Frameworks/iTunesLibrary.framework/Headers" />
           <root url="file:///Library/Frameworks/Tk.framework/Headers" />
           <root url="file:///Library/Frameworks/Tk.framework/PrivateHeaders" />
->>>>>>> 7cbfd5226d95bdcb0d38841c8a090af54717d276
           <root url="file:///usr/include" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
-<<<<<<< HEAD
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
-=======
           <root url="file:///System/Library/Frameworks/AudioToolbox.framework/Headers" />
           <root url="file:///System/Library/Frameworks/Carbon.framework/Headers" />
           <root url="file:///System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers" />
@@ -438,7 +396,6 @@
           <root url="file:///Library/Frameworks/iTunesLibrary.framework/Headers" />
           <root url="file:///Library/Frameworks/Tk.framework/Headers" />
           <root url="file:///Library/Frameworks/Tk.framework/PrivateHeaders" />
->>>>>>> 7cbfd5226d95bdcb0d38841c8a090af54717d276
           <root url="file:///usr/include" />
           <root url="file:///usr/local/include" />
         </SOURCES>

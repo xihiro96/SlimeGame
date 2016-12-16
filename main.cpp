@@ -18,9 +18,6 @@ int main()
     enum gameState {mainMenu, playScene1, playScene2, playScene3, playScene4, playScene5, playScene6, playScene7,
         playScene8, playScene9, playScene10, playScene11, playGame, instructions, gameOver, cutScene};
 
-    // Forward declaration of functions
-    // so far there's none :)
-
     // Initialize menu
     sf::RenderWindow window(sf::VideoMode(1280,720), "Menu", sf::Style::Titlebar | sf::Style::Close);
     //Scene11::runScene11(window);
@@ -31,13 +28,11 @@ int main()
     // create stopwatch and score
     static StopWatch<> sw;
     double score = 0;
+    int val = -1; // check if next level or dead
     // initialize config file values
     Config gameData;
     GameConfig::loadConfig(gameData);
-    //GameConfig::gameReset(gameData);
-    // TODO fix issues with writeConfig.... it has to do with the working directory
-    //GameConfig::writeConfig(gameData);
-
+    GameConfig::gameReset(gameData);
     // begin loop here
     while(loopFlag) {
         switch(currentState) {
@@ -113,40 +108,39 @@ int main()
                 break;
 
             case playGame :
-                // TODO create all of the game logic... woooo
                 // check which level user is on
                 switch(gameData.level) {
                     case 1 :
                         // play level 1
                         sw.start();
-                        StageLevel::runLevel(window, gameData.level);
+                        val = StageLevel::runLevel(window, gameData.level);
                         score += sw.stop();
                         gameData.level++;
                         break;
                     case 2 :
                         // play level 2
                         sw.start();
-                        StageLevel::runLevel(window, gameData.level);
+                        val = StageLevel::runLevel(window, gameData.level);
                         score += sw.stop();
                         gameData.level++;
                         break;
                     case 3 :
                         // play level 3
                         sw.start();
-                        StageLevel::runLevel(window, gameData.level);
+                        val = StageLevel::runLevel(window, gameData.level);
                         score += sw.stop();
                         gameData.level++;
                         break;
                     case 4 :
                         // play level 4
                         sw.start();
-                        StageLevel::runLevel(window, gameData.level);
+                        val = StageLevel::runLevel(window, gameData.level);
                         score += sw.stop();
                         gameData.level++;
                         break;
                     case 5 :
                         sw.start();
-                        StageLevel::runLevel(window, gameData.level);
+                        val = StageLevel::runLevel(window, gameData.level);
                         score += sw.stop();
                         // play boss level
                         gameData.level++;
@@ -155,12 +149,12 @@ int main()
                         std::cout << "Error Error" << std::endl;
                         loopFlag = false;
                 }
-                // remove this once game is implemented ******
-                currentState = mainMenu;
-                //loopFlag = false;
-                //********************************************
-
-                break;
+                    if (val == 0) {
+                        currentState = gameOver;
+                    } else if (val == 1) {
+                        currentState = cutScene;
+                    }
+                    break;
             case instructions :
                 Instructions::runMenu(window);
                 currentState = mainMenu;
@@ -172,38 +166,39 @@ int main()
                 currentState = mainMenu;
                 break;
             case cutScene :
-                // TODO play cutScenes based on cutScene number :)
                 // determine which cutscene to play
                 switch(gameData.sceneNum) {
                     case 1 :
                         // play cutscene 1
                         gameData.sceneNum++;
+                        currentState = playGame;
                         break;
                     case 2 :
                         // play cutscene 2
                         gameData.sceneNum++;
+                        currentState = playGame;
                         break;
                     case 3 :
                         // play cutscene 3
                         gameData.sceneNum++;
+                        currentState = playGame;
                         break;
                     case 4 :
                         //play custscene 4
                         gameData.sceneNum++;
+                        currentState = playGame;
                         break;
                     case 5 :
                         //play custscene 5
                         gameData.sceneNum++;
+                        // reset game variables and go back to menu
+                        GameConfig::gameReset(gameData);
+                        currentState = mainMenu;
                         break;
                     default :
                         std::cout << "Error Error" << std::endl;
                         loopFlag = false;
                 }
-
-                // remove this once game is implemented ******
-                currentState = mainMenu;
-                //********************************************
-
                 break;
             default:
                 std::cout << "Error Error" << std::endl;
