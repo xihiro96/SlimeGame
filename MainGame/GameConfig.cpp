@@ -18,7 +18,8 @@ void GameConfig::loadConfig(Config &config) {
     if (fin.good()) {
         while (getline(fin, line)) {
             std::cout << line << std::endl;
-            std::istringstream sin(line.substr(line.find("=") + 1));
+            std::size_t pos = line.find("=") + 1;
+            std::istringstream sin(line.substr(pos));
             if (line.find("level") != -1)
                 sin >> config.level;
             else if (line.find("sceneNum") != -1)

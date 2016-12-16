@@ -29,8 +29,7 @@ Instructions::Instructions(float width, float height) {
     instructions[1].setString("W - Jump");
     instructions[2].setString("A - Move Left");
     instructions[3].setString("D - Move Right");
-    instructions[4].setString("Space - Attack");
-    instructions[5].setString("Enter - Pause Game");
+    instructions[5].setString("Enter - Continue Dialog");
 
     // STORY SECTION
     instructions[6].setFont(titleFont);
