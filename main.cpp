@@ -6,6 +6,7 @@
 #include "MainGame/Instructions.h"
 #include "MainGame/StageLevel.h"
 #include "MainGame/GameOver.h"
+#include "MainGame/EndGame.h"
 #include "CutScenes/Scene.h"
 #include "MainGame/GameConfig.h"
 #include "MainGame/StopWatch.h"
@@ -14,8 +15,8 @@ int main()
 {
 
     // State Machine Controller
-    // States: Main Menu, Game Levels, Instructions, Game Over, CutScenes
-    enum gameState {mainMenu, playGame, instructions, gameOver, cutScene};
+    // States: Main Menu, Game Levels, Instructions, Game Over, CutScenes, endGame
+    enum gameState {mainMenu, playGame, instructions, gameOver, cutScene, endGame};
 
     // Initialize menu
     sf::RenderWindow window(sf::VideoMode(1280,720), "Menu", sf::Style::Titlebar | sf::Style::Close);
@@ -156,13 +157,23 @@ int main()
                         // play end
                         Scene::runScene11(window);
                         // reset game variables and go back to menu
-                        GameConfig::gameReset(gameData);
-                        currentState = mainMenu;
+                        currentState = endGame;
                         break;
                     default :
                         std::cout << "Error Error" << std::endl;
                         loopFlag = false;
                 }
+                break;
+            case endGame :
+                // reset game, record score, show end screen
+                GameConfig::gameReset(gameData);
+                if(score < gameData.highScore) {
+                    gameData.highScore = score;
+                    GameConfig::writeConfig(gameData);
+                }
+                EndGame::runMenu(window, score);
+                score = 0;
+                currentState = mainMenu;
                 break;
             default:
                 std::cout << "Error Error" << std::endl;
